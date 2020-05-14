@@ -1,0 +1,21 @@
+{
+	"name": "sparrow",
+	"version": "1.0.0",
+	"description": "rollup使用示例",
+	"main": "index.js",
+	"scripts": {
+		"build": "rollup -c"
+	},
+	"author": "CHAD.DING",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.9.6",
+		"@babel/plugin-external-helpers": "^7.0.0",
+		"@babel/preset-env": "^7.0.0",
+		"rollup-plugin-babel": "^4.4.0",
+		"rollup-plugin-node-resolve": "^5.2.0"
+	},
+	"dependencies": {
+		"express": "^4.17.1"
+	}
+}
