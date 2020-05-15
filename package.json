@@ -2,10 +2,10 @@
 	"name": "sparrow",
 	"version": "1.0.0",
 	"description": "rollup使用示例",
-	"main": "index.js",
+	"main": "dist/index.js",
 	"scripts": {
 		"lint": "eslint --ext .js src",
-		"build": "rollup -c --watch",
+		"build": "rollup -c",
 		"cz": "git-cz",
 		"version": "standard-version"
 	},
@@ -47,13 +47,16 @@
 		"@commitlint/cli": "^8.3.5",
 		"@commitlint/config-conventional": "^8.3.4",
 		"babel-eslint": "^10.1.0",
+		"chalk": "^4.0.0",
 		"commitizen": "^4.0.3",
 		"cz-conventional-changelog": "^3.1.0",
 		"eslint": "^7.0.0",
 		"husky": "^4.2.3",
 		"lint-staged": "^10.2.2",
+		"rollup": "^2.10.0",
 		"rollup-plugin-babel": "^4.4.0",
 		"rollup-plugin-node-resolve": "^5.2.0",
+		"rollup-plugin-uglify": "^6.0.4",
 		"standard-version": "^7.1.0"
 	}
 }
