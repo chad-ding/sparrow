@@ -1,5 +1,5 @@
 export default {
-    getInfo() {
-        return 'vivo';
-    }
-}
+	getInfo() {
+		return 'vivo';
+	}
+};

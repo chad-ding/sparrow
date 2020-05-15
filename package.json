@@ -4,18 +4,56 @@
 	"description": "rollup使用示例",
 	"main": "index.js",
 	"scripts": {
-		"build": "rollup -c"
+		"lint": "eslint --ext .js src",
+		"build": "rollup -c --watch",
+		"cz": "git-cz",
+		"version": "standard-version"
 	},
 	"author": "CHAD.DING",
 	"license": "ISC",
+	"standard-version": {
+		"changelogHeader": "# Changelog\n\n所有项目的变更记录会记录在如下文件.\n",
+		"dryRun": true,
+		"skip": {
+			"bump": true
+		}
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		]
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"lint-staged": {
+		"*.js": [
+			"eslint --fix",
+			"git add"
+		]
+	},
 	"devDependencies": {
 		"@babel/core": "^7.9.6",
 		"@babel/plugin-external-helpers": "^7.0.0",
 		"@babel/preset-env": "^7.0.0",
+		"@commitlint/cli": "^8.3.5",
+		"@commitlint/config-conventional": "^8.3.4",
+		"babel-eslint": "^10.1.0",
+		"commitizen": "^4.0.3",
+		"cz-conventional-changelog": "^3.1.0",
+		"eslint": "^7.0.0",
+		"husky": "^4.2.3",
+		"lint-staged": "^10.2.2",
 		"rollup-plugin-babel": "^4.4.0",
-		"rollup-plugin-node-resolve": "^5.2.0"
-	},
-	"dependencies": {
-		"express": "^4.17.1"
+		"rollup-plugin-node-resolve": "^5.2.0",
+		"standard-version": "^7.1.0"
 	}
 }

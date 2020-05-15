@@ -1,5 +1,5 @@
 export default {
-    getName() {
-        return 'hello world'
-    }
-}
+	getName() {
+		return 'hello world';
+	}
+};
